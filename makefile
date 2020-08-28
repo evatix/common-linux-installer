@@ -49,5 +49,10 @@ ins-li-ch-zsh:
 ins-vmguest:
 	cd $(VmwareFolder) && make install-guest
 
+vm-mount-script-copy:
+	cd $(VmwareFolder) && cp -rf ./vmware-mount-shared.sh ~/Desktop/vmware/
+	sudo chmod +x ~/Desktop/vmware/vmware-mount-shared.sh
+	sudo update-rc.d ~/Desktop/vmware/vmware-mount-shared.sh defaults
+
 vm-mount-shared:
 	cd $(VmwareFolder) && make mount-shared
