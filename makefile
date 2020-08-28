@@ -47,4 +47,7 @@ ins-li-ch-zsh:
 	chsh -s `which zsh`
 
 ins-vmguest:
-	cd $(VmwareFolder) && 
+	cd $(VmwareFolder) && make install-guest
+
+ins-mount-shared:
+	cd $(VmwareFolder) && make mount-shared
