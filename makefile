@@ -14,7 +14,7 @@ ins-curl:
 	yes | sudo apt install curl
 
 ins-vscode:
-    sudo sh $(VsCodeShell)
+	sudo sh $(VsCodeShell)
 
 ins-chrome:
 	yes | sudo sh $(ChromeShell)
@@ -50,3 +50,4 @@ cp-zsh:
 	cat ~/.zshrc
 	pwd
 	source ~/.zshrc
+	
