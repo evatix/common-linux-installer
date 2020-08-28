@@ -1,5 +1,6 @@
 VsCodeShell = "./vscode/vscode.sh"
 ChromeShell = "./chrome/chrome.sh"
+VmwareFolder = "./vmware/"
 
 git-clean-get:
 	git reset --hard
@@ -42,12 +43,8 @@ ins-cent-ozsh:
 	yes | sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && exit
 
 ins-li-ch-zsh:
-	chsh -s $(which zsh)
+	chsh -s $(which zsh) -root
 	chsh -s `which zsh`
 
-cp-zsh:
-	cd $(LChapter01) && yes | cp -rf .zshrc ~/
-	cat ~/.zshrc
-	pwd
-	source ~/.zshrc
-	
+ins-vmguest:
+	cd $(VmwareFolder) && 
