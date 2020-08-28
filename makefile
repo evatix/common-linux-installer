@@ -53,6 +53,8 @@ vm-mount-script-copy:
 	cd $(VmwareFolder) && cp -rf ./vmware-mount-shared.sh ~/Desktop/vmware/
 	sudo chmod +x ~/Desktop/vmware/vmware-mount-shared.sh
 	sudo update-rc.d ~/Desktop/vmware/vmware-mount-shared.sh defaults
+	echo "if doesn't work then: crontab -e, add below"
+	echo "@reboot ~/Desktop/vmware/vmware-mount-shared.sh"
 
 vm-mount-shared:
 	cd $(VmwareFolder) && make mount-shared
