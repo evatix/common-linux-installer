@@ -14,7 +14,7 @@ ins-curl:
 	yes | sudo apt install curl
 
 ins-vscode:
-    yes | sudo sh $(VsCodeShell)
+    sudo sh $(VsCodeShell)
 
 ins-chrome:
 	yes | sudo sh $(ChromeShell)
