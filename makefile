@@ -19,7 +19,6 @@ ins-vscode:
 ins-chrome:
 	yes | sudo sh $(ChromeShell)
 
-
 install-ssh-pass-linux:
 	sudo apt-get install sshpass
 	sudo apt update
