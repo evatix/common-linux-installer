@@ -37,10 +37,10 @@ ins-li-build:
 	yes | sudo apt-get install build-essential libssl-dev
 
 ins-li-ozsh:
-	yes | sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && exit
+	yes | wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
 ins-cent-ozsh:
-	yes | sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && exit
+	yes | wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
 ins-li-ch-zsh:
 	chsh -s $(which zsh) -root
@@ -50,6 +50,7 @@ ins-vmguest:
 	cd $(VmwareFolder) && make install-guest
 
 vm-mount-script-copy:
+	mkdir ~/Desktop/vmware/
 	cd $(VmwareFolder) && cp -rf ./vmware-mount-shared.sh ~/Desktop/vmware/
 	sudo chmod +x ~/Desktop/vmware/vmware-mount-shared.sh
 	sudo update-rc.d ~/Desktop/vmware/vmware-mount-shared.sh defaults
