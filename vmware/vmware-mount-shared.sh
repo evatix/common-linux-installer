@@ -1,3 +1,4 @@
+#!/bin/sh 
 /usr/bin/vmhgfs-fuse --enabled
 sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other 
 ln -s /mnt/hgfs ~/Desktop/SharedDirectories 

@@ -1,3 +1,4 @@
+#!/bin/sh 
 # Guest install in debian and other linux
 
 yes | sudo apt-get install open-vm-tools

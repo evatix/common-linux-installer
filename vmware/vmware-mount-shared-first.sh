@@ -1,3 +1,5 @@
+#!/bin/sh 
+
 sudo apt update
 sh ./vmware-mount-shared.sh
 ls -la

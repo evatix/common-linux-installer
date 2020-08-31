@@ -1,12 +1,28 @@
 VsCodeShell = "./vscode/vscode.sh"
 ChromeShell = "./chrome/chrome.sh"
 VmwareFolder = "./vmware/"
+GitFolder = "./git-latest/"
+MouseWheel = "./mousewheel/"
 
 git-clean-get:
 	git reset --hard
 	git clean -df
 	git status
 	git pull
+
+update:
+	sudo apt update
+
+ins-mwheel:
+	sudo apt-get install imwheel
+	make update
+
+fix-mwheel:
+	echo "set 6"
+	cd $(MouseWheel) && sudo sh ./fix.sh
+
+ins-git:
+	cd $(GitFolder) && sh git.sh
 
 ins-wget:
 	yes | sudo apt install wget
@@ -50,12 +66,7 @@ ins-vmguest:
 	cd $(VmwareFolder) && make install-guest
 
 vm-mount-script-copy:
-	mkdir ~/Desktop/vmware/
-	cd $(VmwareFolder) && cp -rf ./vmware-mount-shared.sh ~/Desktop/vmware/
-	sudo chmod +x ~/Desktop/vmware/vmware-mount-shared.sh
-	sudo update-rc.d ~/Desktop/vmware/vmware-mount-shared.sh defaults
-	echo "if doesn't work then: crontab -e, add below"
-	echo "@reboot ~/Desktop/vmware/vmware-mount-shared.sh"
+	cd $(VmwareFolder) && sh ./copy-scripts.sh
 
 vm-mount-shared:
 	cd $(VmwareFolder) && make mount-shared
