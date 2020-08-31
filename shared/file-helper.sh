@@ -49,10 +49,10 @@ if_not_directory_exist(){
 create_directory_if_not_exists() {
     local temp=$1
     if [ -d  $temp ]; then
-        info "[$temp] : directory exists."
+        echo "[$temp] : directory exists."
     else
-        warn "[$temp] : directory not exist."
-        info "[$temp] : creating..."
+        echo "[$temp] : directory not exist."
+        echo "[$temp] : creating..."
         mkdir $temp
     fi
 }
@@ -69,8 +69,9 @@ create_and_get_directory(){
 }
 
 create_and_get_downloads_temp_directory(){
-    temp="$(get_downloads_temp_directory)"
+    local temp="$(get_downloads_temp_directory)"
     create_and_get_directory $temp
+    echo $temp
 }
 
 download_files_to_logged_users_download_temp(){
@@ -78,14 +79,14 @@ download_files_to_logged_users_download_temp(){
     local downloadFileName=$2
     local temp=$(create_and_get_downloads_temp_directory)
     local fullDownloadPath="$temp/$downloadFileName"
-    info "[$temp] : downloads temp directory."
+    echo "[$temp] : downloads temp directory."
     cd "$temp"
     pwd
     
     if [ -f "$fullDownloadPath" ]; then
-        info "[$fullDownloadPath] : file already exist."
+        echo "[$fullDownloadPath] : file already exist."
     else
-        info "wget -O $downloadFileName $wgetUrl"
+        echo "wget -O $downloadFileName $wgetUrl"
         wget -P $temp -O $downloadFileName $wgetUrl
     fi
 
