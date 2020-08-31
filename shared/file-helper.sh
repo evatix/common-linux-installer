@@ -75,6 +75,12 @@ create_and_get_downloads_temp_directory(){
     echo $(create_and_get_directory $temp)
 }
 
+
+get_combined_path_with_download_temp(){
+    local temp=$(get_downloads_temp_directory)/$1
+    echo $temp
+}
+
 download_files_to_logged_users_download_temp_if_not_exists(){
     local wgetUrl=$1
     local downloadFileName=$2
@@ -82,17 +88,33 @@ download_files_to_logged_users_download_temp_if_not_exists(){
     local fullDownloadPath="$tempDir/$downloadFileName"
     # echo "[$tempDir] : downloads temp directory [$fullDownloadPath]."
     cd "$tempDir"
-    pwd
+    # pwd
     
     if [ -f "$fullDownloadPath" ]; then
-        echo "[$fullDownloadPath] : file already exist."
+        # echo "[$fullDownloadPath] : file already exist."
         return
     else
-        echo "wget -P $tempDir -O $downloadFileName $wgetUrl"
+        # echo "wget -P $tempDir -O $downloadFileName $wgetUrl"
         wget -P $tempDir -O $downloadFileName $wgetUrl
     fi
 
     ls -la
 }
 
-download_files_to_logged_users_download_temp_if_not_exists "https://www.kernel.org/pub/software/scm/git/git-2.28.0.tar.gz" git.2.28.tar.gz
+download_install_targz(){
+    local wgetUrl=$1
+    local downloadFileName=$2
+    local downloadTemp=$(get_downloads_temp_directory)
+    download_files_to_logged_users_download_temp_if_not_exists $wgetUrl $downloadFileName
+    cd $downloadTemp
+    pwd
+    # https://askubuntu.com/questions/25961/how-do-i-install-a-tar-gz-or-tar-bz2-file
+    echo "$downloadFileName"
+    tar xzf "$downloadFileName"
+    ls -la
+    # cd ./configure
+    # sudo make install
+}
+
+# download_files_to_logged_users_download_temp_if_not_exists "https://www.kernel.org/pub/software/scm/git/git-2.28.0.tar.gz" git.2.28.tar.gz
+download_install_targz "https://www.kernel.org/pub/software/scm/git/git-2.28.0.tar.gz" git.2.28.tar.gz
