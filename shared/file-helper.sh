@@ -3,6 +3,7 @@
 # Include files.
 . ./shell-logger.sh
 . ./users-helper.sh
+. ./declare-bool.sh
 
 get_current_user_downloads() {
     local user=$(get_logged_in_users)
@@ -22,28 +23,28 @@ get_downloads_temp_directory() {
 is_file_exist(){
     local file=$1
     if [[ -f "$file" ]]; then
-        return true
+        return $TRUE
     fi
 
-    return false
+    return $FALSE
 }
 
 if_not_file_exist(){
     local file=$1
     if [[ -f "$file" ]]; then
-        return $false
+        return $FALSE
     fi
 
-    return $true
+    return $TRUE
 }
 
 if_not_directory_exist(){
     local directory=$1
     if [ -d "$directory" ]; then
-        return $false
+        return $FALSE
     fi
 
-    return $true
+    return $TRUE
 }
 
 create_directory_if_not_exists() {
@@ -69,7 +70,7 @@ create_and_get_directory(){
 }
 
 create_and_get_downloads_temp_directory(){
-    local temp="$(get_downloads_temp_directory)"
+    local temp=$(get_downloads_temp_directory)
     create_and_get_directory $temp
     echo $temp
 }
@@ -77,20 +78,20 @@ create_and_get_downloads_temp_directory(){
 download_files_to_logged_users_download_temp(){
     local wgetUrl=$1
     local downloadFileName=$2
-    local temp=$(create_and_get_downloads_temp_directory)
+    local tempDir=$(create_and_get_downloads_temp_directory)
     local fullDownloadPath="$temp/$downloadFileName"
-    echo "[$temp] : downloads temp directory."
-    cd "$temp"
+    echo "[$tempDir] : downloads temp directory."
+    cd "$tempDir"
     pwd
     
     if [ -f "$fullDownloadPath" ]; then
         echo "[$fullDownloadPath] : file already exist."
     else
         echo "wget -O $downloadFileName $wgetUrl"
-        wget -P $temp -O $downloadFileName $wgetUrl
+        // wget -P $temp -O $downloadFileName $wgetUrl
     fi
 
     ls -la
 }
 
-download_files_to_logged_users_download_temp "https://www.kernel.org/pub/software/scm/git/git-2.28.0.tar.gz" "git.2.28.tar.gz"
+download_files_to_logged_users_download_temp "https://www.kernel.org/pub/software/scm/git/git-2.28.0.tar.gz" git.2.28.tar.gz
