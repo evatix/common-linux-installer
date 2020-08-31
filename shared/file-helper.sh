@@ -50,10 +50,11 @@ if_not_directory_exist(){
 create_directory_if_not_exists() {
     local temp=$1
     if [ -d  $temp ]; then
-        echo "[$temp] : directory exists."
+        #info "[$temp] : directory exists."
+        return
     else
-        echo "[$temp] : directory not exist."
-        echo "[$temp] : creating..."
+        #echo "[$temp] : directory not exist."
+        #echo "[$temp] : creating..."
         mkdir $temp
     fi
 }
@@ -74,23 +75,24 @@ create_and_get_downloads_temp_directory(){
     echo $(create_and_get_directory $temp)
 }
 
-download_files_to_logged_users_download_temp(){
+download_files_to_logged_users_download_temp_if_not_exists(){
     local wgetUrl=$1
     local downloadFileName=$2
     local tempDir=$(create_and_get_downloads_temp_directory)
-    local fullDownloadPath="$temp/$downloadFileName"
-    echo "[$tempDir] : downloads temp directory."
+    local fullDownloadPath="$tempDir/$downloadFileName"
+    # echo "[$tempDir] : downloads temp directory [$fullDownloadPath]."
     cd "$tempDir"
     pwd
     
     if [ -f "$fullDownloadPath" ]; then
         echo "[$fullDownloadPath] : file already exist."
+        return
     else
-        echo "wget -O $downloadFileName $wgetUrl"
-        # wget -P $temp -O $downloadFileName $wgetUrl
+        echo "wget -P $tempDir -O $downloadFileName $wgetUrl"
+        wget -P $tempDir -O $downloadFileName $wgetUrl
     fi
 
     ls -la
 }
 
-download_files_to_logged_users_download_temp "https://www.kernel.org/pub/software/scm/git/git-2.28.0.tar.gz" git.2.28.tar.gz
+download_files_to_logged_users_download_temp_if_not_exists "https://www.kernel.org/pub/software/scm/git/git-2.28.0.tar.gz" git.2.28.tar.gz
