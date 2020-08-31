@@ -71,8 +71,7 @@ create_and_get_directory(){
 
 create_and_get_downloads_temp_directory(){
     local temp=$(get_downloads_temp_directory)
-    create_and_get_directory $temp
-    echo $temp
+    echo $(create_and_get_directory $temp)
 }
 
 download_files_to_logged_users_download_temp(){
@@ -88,7 +87,7 @@ download_files_to_logged_users_download_temp(){
         echo "[$fullDownloadPath] : file already exist."
     else
         echo "wget -O $downloadFileName $wgetUrl"
-        // wget -P $temp -O $downloadFileName $wgetUrl
+        # wget -P $temp -O $downloadFileName $wgetUrl
     fi
 
     ls -la
