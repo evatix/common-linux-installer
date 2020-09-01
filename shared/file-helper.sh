@@ -101,6 +101,16 @@ download_files_to_logged_users_download_temp_if_not_exists(){
     ls -la
 }
 
+# Reference: https://bit.ly/3gKycew
+string_replace(){
+    local stringGiven=$1
+    local stringSearch=$2
+    local stringReplace=$3
+    echo ${stringGiven/$stringSearch/$stringReplace}
+    #result=$(echo "$stringGiven" | sed "s/$stringSearch/$stringReplace/")
+    #echo result
+}
+
 download_install_targz(){
     local wgetUrl=$1
     local downloadFileName=$2
@@ -117,4 +127,9 @@ download_install_targz(){
 }
 
 # download_files_to_logged_users_download_temp_if_not_exists "https://www.kernel.org/pub/software/scm/git/git-2.28.0.tar.gz" git.2.28.tar.gz
-download_install_targz "https://www.kernel.org/pub/software/scm/git/git-2.28.0.tar.gz" git.2.28.tar.gz
+# download_install_targz "https://www.kernel.org/pub/software/scm/git/git-2.28.0.tar.gz" git.2.28.tar.gz
+
+
+# https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace-text-in-files-in-linux-unix-shell/
+
+string_replace "hello World this is mine" "world" "alim"
