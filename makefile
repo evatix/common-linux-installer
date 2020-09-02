@@ -3,6 +3,7 @@ ChromeShell = "./chrome/chrome.sh"
 VmwareFolder = "./vmware/"
 GitFolder = "./git-latest/"
 MouseWheel = "./mousewheel/"
+BrewFolder = "./brew/"
 
 git-clean-get:
 	git reset --hard
@@ -20,6 +21,9 @@ ins-mwheel:
 fix-mwheel:
 	echo "set 6"
 	cd $(MouseWheel) && sudo sh ./fix.sh
+
+ins-brew:
+	cd $(BrewFolder) && sh brew.sh
 
 ins-git:
 	cd $(GitFolder) && sh git.sh
