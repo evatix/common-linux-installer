@@ -47,7 +47,7 @@ ins-clask-vlc:
 	brew clask install vlc
 
 ins-ps:
-	cd $(PowerShellFolder) && ./psw-ins.sh
+	cd $(PowerShellFolder) && sh ./psw-ins.sh
 
 ins-brew:
 	cd $(BrewFolder) && sh ./brew-ins.sh
