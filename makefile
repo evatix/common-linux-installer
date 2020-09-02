@@ -47,12 +47,16 @@ ins-clask-vlc:
 
 ins-brew:
 	cd $(BrewFolder) && sh ./brew-ins.sh
+	echo "https://formulae.brew.sh/formula-linux/"
+	brew --version
 
 fix-brew:
-	cd $(BrewFolder) && sh ./brew-eval.sh
+	cd $(BrewFolder) && ./brew-eval.sh
+	brew --version
 
 ins-git:
 	cd $(GitFolder) && sh ./git.sh
+	git --version
 
 ins-wget:
 	yes | sudo apt install wget
