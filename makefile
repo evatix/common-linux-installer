@@ -23,8 +23,22 @@ fix-mwheel:
 	cd $(MouseWheel) && sudo sh ./fix.sh
 
 ins-devenv:
-	echo "Installing apt-get install build-essential wget curl file git ssh libssl-dev vim autoremove"
-	yes | sudo apt-get install build-essential curl wget file git ssh libssl-dev vim autoremove
+	echo "Installing apt-get install build-essential wget curl file git ssh libssl-dev vim autoremove python-dev python-pip imwheel"
+	yes | sudo apt-get install build-essential curl wget file git ssh libssl-dev vim autoremove python-dev python-pip imwheel
+	make update
+
+ins-scoop:
+	make ins-devenv
+	yes | pip install scoop
+
+ins-golang:
+	echo "brew install go, install brew first (make ins-brew)"
+	brew install go
+	make update
+
+ins-vlc:
+	echo "yes | brew install vlc"
+	yes | brew install vlc
 
 ins-brew:
 	cd $(BrewFolder) && sh brew.sh
