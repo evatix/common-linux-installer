@@ -4,6 +4,7 @@ VmwareFolder = "./vmware/"
 GitFolder = "./git-latest/"
 MouseWheel = "./mousewheel/"
 BrewFolder = "./brew-installer/"
+PyPipFolder = "./py-pip-ins/"
 
 git-clean-get:
 	git reset --hard
@@ -23,22 +24,26 @@ fix-mwheel:
 	cd $(MouseWheel) && sudo sh ./fix.sh
 
 ins-devenv:
-	echo "Installing apt-get install build-essential wget curl file git ssh libssl-dev vim autoremove python-dev python-pip imwheel"
-	yes | sudo apt-get install build-essential curl wget file git ssh libssl-dev vim autoremove python-dev python-pip imwheel
+	echo "Installing apt-get install build-essential wget curl file git ssh libssl-dev vim autoremove python-dev python2 imwheel"
+	yes | sudo apt-get install build-essential curl wget file git ssh libssl-dev vim autoremove python-dev python2 imwheel
 	make update
 
 ins-scoop:
 	make ins-devenv
-	yes | pip install scoop
+	pip install scoop
+
+fix-pip:
+	cd $(PyPipFolder) && sh pip-install.sh
 
 ins-golang:
 	echo "brew install go, install brew first (make ins-brew)"
 	brew install go
 	make update
+	go version
 
-ins-vlc:
-	echo "yes | brew install vlc"
-	yes | brew install vlc
+ins-clask-vlc:
+	echo "brew clask install vlc"
+	brew clask install vlc
 
 ins-brew:
 	cd $(BrewFolder) && sh ./brew-ins.sh
