@@ -41,10 +41,13 @@ ins-vlc:
 	yes | brew install vlc
 
 ins-brew:
-	cd $(BrewFolder) && sh brew.sh
+	cd $(BrewFolder) && bash brew.sh
+
+fix-brew:
+	cd $(BrewFolder) && bash brew-eval.sh
 
 ins-git:
-	cd $(GitFolder) && sh git.sh
+	cd $(GitFolder) && bash git.sh
 
 ins-wget:
 	yes | sudo apt install wget
