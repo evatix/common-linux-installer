@@ -23,8 +23,8 @@ fix-mwheel:
 	cd $(MouseWheel) && sudo sh ./fix.sh
 
 ins-devenv:
-	echo "Installing apt-get install build-essential curl file git ssh libssl-dev vim"
-	yes | sudo apt-get install build-essential curl file git ssh libssl-dev vim
+	echo "Installing apt-get install build-essential wget curl file git ssh libssl-dev vim autoremove"
+	yes | sudo apt-get install build-essential curl wget file git ssh libssl-dev vim autoremove
 
 ins-brew:
 	cd $(BrewFolder) && sh brew.sh
