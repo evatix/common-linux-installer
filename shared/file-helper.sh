@@ -4,6 +4,7 @@
 . ./shell-logger.sh
 . ./users-helper.sh
 . ./declare-bool.sh
+. ./strings-helper.sh
 
 get_current_user_downloads() {
     local user=$(get_logged_in_users)
@@ -101,35 +102,26 @@ download_files_to_logged_users_download_temp_if_not_exists(){
     ls -la
 }
 
-# Reference: https://bit.ly/3gKycew
-string_replace(){
-    local stringGiven=$1
-    local stringSearch=$2
-    local stringReplace=$3
-    echo ${stringGiven/$stringSearch/$stringReplace}
-    #result=$(echo "$stringGiven" | sed "s/$stringSearch/$stringReplace/")
-    #echo result
-}
-
 download_install_targz(){
     local wgetUrl=$1
     local downloadFileName=$2
     local downloadTemp=$(get_downloads_temp_directory)
+    local fileNameWithoutExtension=string_search_and_remove $downloadFileName ".tar.gz"
     download_files_to_logged_users_download_temp_if_not_exists $wgetUrl $downloadFileName
     cd $downloadTemp
     pwd
     # https://askubuntu.com/questions/25961/how-do-i-install-a-tar-gz-or-tar-bz2-file
-    echo "$downloadFileName"
+    echo "$downloadFileName : $fileNameWithoutExtension"
+    
     tar xzf "$downloadFileName"
     ls -la
-    # cd ./configure
+    cd $fileNameWithoutExtension
+    cd ./configure
+    pwd
     # sudo make install
 }
 
 # download_files_to_logged_users_download_temp_if_not_exists "https://www.kernel.org/pub/software/scm/git/git-2.28.0.tar.gz" git.2.28.tar.gz
-# download_install_targz "https://www.kernel.org/pub/software/scm/git/git-2.28.0.tar.gz" git.2.28.tar.gz
-
-
+download_install_targz "https://www.kernel.org/pub/software/scm/git/git-2.28.0.tar.gz" git.2.28.tar.gz
 # https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace-text-in-files-in-linux-unix-shell/
 
-string_replace "hello World this is mine" "world" "alim"
