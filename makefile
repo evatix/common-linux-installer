@@ -5,6 +5,7 @@ GitFolder = "./git-latest/"
 MouseWheel = "./mousewheel/"
 BrewFolder = "./brew-installer/"
 PyPipFolder = "./py-pip-ins/"
+PowerShellFolder = "./psw-ins/"
 
 git-clean-get:
 	git reset --hard
@@ -44,6 +45,9 @@ ins-golang:
 ins-clask-vlc:
 	echo "brew clask install vlc"
 	brew clask install vlc
+
+ins-ps:
+	cd $(PowerShellFolder) && ./psw-ins.sh
 
 ins-brew:
 	cd $(BrewFolder) && sh ./brew-ins.sh
