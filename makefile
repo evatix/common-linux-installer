@@ -3,7 +3,7 @@ ChromeShell = "./chrome/chrome.sh"
 VmwareFolder = "./vmware/"
 GitFolder = "./git-latest/"
 MouseWheel = "./mousewheel/"
-BrewFolder = "./brewInstaller/"
+BrewFolder = "./brew-installer/"
 
 git-clean-get:
 	git reset --hard
