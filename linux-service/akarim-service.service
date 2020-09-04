@@ -1,0 +1,9 @@
+[Unit]
+Description=Alim's Exmaple service
+
+[Service]
+Type=Akarim
+ExecStart=/bin/bash /home/a/Desktop/scripts/all-scripts-run.sh
+
+[Install]
+WantedBy=multi-user.target
