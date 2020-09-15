@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "make ins-devenv, if already not."
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"

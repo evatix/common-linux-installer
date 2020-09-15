@@ -55,6 +55,9 @@ ins-clask-vlc:
 ins-ps:
 	cd $(PowerShellFolder) && sudo sh ./psw-ins.sh
 
+ins-docker:
+	
+
 ins-brew:
 	cd $(BrewFolder) && sh ./brew-ins.sh
 	echo "https://formulae.brew.sh/formula-linux/"

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo apt-get install fonts-powerline
 sudo apt install net-tools
 sudo install wget

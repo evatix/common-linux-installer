@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "https://bit.ly/3bmMH78"
 sudo add-apt-repository universe
 sudo apt update && sudo apt install python2
