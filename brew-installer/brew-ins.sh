@@ -11,4 +11,4 @@ echo "Packages: https://formulae.brew.sh/formula-linux/"
 sudo apt update
 brew --version
 brew install hello
-sudo reboot
+echo "do sudo reboot"
