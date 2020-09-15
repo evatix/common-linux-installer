@@ -25,8 +25,14 @@ fix-mwheel:
 	cd $(MouseWheel) && sudo sh ./fix.sh
 
 ins-devenv:
-	echo "Installing apt-get install build-essential wget curl file git ssh libssl-dev vim autoremove python-dev python2 imwheel"
-	yes | sudo apt-get install build-essential curl wget file git ssh libssl-dev vim autoremove python-dev python2 imwheel
+	echo "Installing apt-get install build-essential wget curl file git ssh libssl-dev vim"
+	yes | sudo apt-get install build-essential wget curl file git ssh libssl-dev vim
+	make update
+
+ins-devenv-ubuntu:
+	make ins-devenv
+	echo "Installing apt-get autoremove python-dev python2 imwheel"
+	yes | sudo apt-get install autoremove python-dev python2 imwheel
 	make update
 
 ins-scoop:
