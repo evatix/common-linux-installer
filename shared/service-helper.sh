@@ -83,11 +83,12 @@ service_disable() {
 service_remove() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
-    local systemPath="/etc/systemd/system/$serviceFileName"
+    local sysDir=/etc/systemd/system
+    local systemPath="$sysDir/$serviceFileName"
     echo "$serviceFileName - service removing (disable, stop, remove)..."
     service_disable $serviceName
     service_stop $serviceName
-    move_to_directory_ls_with_grep $systemPath $serviceName
+    move_to_directory_ls_with_grep $sysDir $serviceName
     echo "running - sudo rm -rf $systemPath"
     sudo rm -rf $systemPath
     move_to_directory_ls_with_grep $sysDir $serviceName
