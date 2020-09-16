@@ -31,14 +31,14 @@ service_start() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     echo "$serviceFileName - service starting..."
-    systemctl start $serviceFileName
+    systemctl --user start $serviceFileName
 }
 
 service_stop() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     echo "$serviceFileName - service stopping..."
-    systemctl stop $serviceFileName
+    systemctl --user stop $serviceFileName
 }
 
 service_status() {
@@ -59,7 +59,7 @@ service_restart() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     echo "$serviceFileName - service restarting..."
-    systemctl restart $serviceFileName
+    systemctl --user restart $serviceFileName
 }
 
 service_full_restart() {
