@@ -3,6 +3,7 @@
 # Include files.
 . ./service-helper.sh
 
-create_and_run_service brew-service ../brew-installer/brew-service.service
-service_status brew-service
+# brew-service.server.service
+create_and_run_service brew-service.server ../brew-installer/brew-service.server.service
+service_status brew-service.server
 # sudo cp brew-service.service /etc/systemd/system/brew-service.service

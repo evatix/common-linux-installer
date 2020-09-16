@@ -25,11 +25,18 @@ service_start() {
     sudo systemctl start $serviceFileName
 }
 
+service_stop() {
+    local serviceName=$1
+    local serviceFileName=$serviceName.service
+    echo "$serviceFileName - service stopping..."
+    sudo systemctl stop $serviceFileName
+}
+
 service_status() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     echo "$serviceFileName - service status..."
-    sudo systemctl start $serviceFileName
+    sudo systemctl status $serviceFileName
 }
 
 service_enable() {
@@ -48,9 +55,9 @@ service_restart() {
 
 service_full_restart() {
     local serviceName=$1
-    local serviceFileName=$serviceName.service
-    echo "Service full restarting (stop, start, restart)..."
-    sudo systemctl stop $serviceFileName
-    sudo systemctl start $serviceFileName
-    sudo systemctl restart $serviceFileName
+    echo "Service full restarting (stop, start, restart, status)..."
+    service_start $serviceName
+    service_stop $serviceName
+    service_restart $serviceName
+    service_status $serviceName
 }
