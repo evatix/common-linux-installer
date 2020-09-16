@@ -50,7 +50,7 @@ service_enable() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     warn "$serviceFileName - service enabling..."
-    systemctl --user enable --now $serviceFileName
+    systemctl enable $serviceFileName
 }
 
 service_restart() {
