@@ -29,35 +29,35 @@ service_start() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     info "$serviceFileName - service starting..."
-    systemctl start $serviceFileName
+    sudo systemctl start $serviceFileName
 }
 
 service_stop() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     warn "$serviceFileName - service stopping..."
-    systemctl stop $serviceFileName
+    sudo systemctl stop $serviceFileName
 }
 
 service_status() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     info "$serviceFileName - service status..."
-    systemctl status $serviceFileName
+    sudo systemctl status $serviceFileName
 }
 
 service_enable() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     warn "$serviceFileName - service enabling..."
-    systemctl enable $serviceFileName
+    sudo systemctl enable $serviceFileName
 }
 
 service_restart() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     warn "$serviceFileName - service restarting..."
-    systemctl restart $serviceFileName
+    sudo systemctl restart $serviceFileName
 }
 
 service_full_restart() {
@@ -73,7 +73,7 @@ service_disable() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     info "$serviceFileName - service disabling..."
-    systemctl disable $serviceFileName
+    sudo systemctl disable $serviceFileName
 }
 
 
