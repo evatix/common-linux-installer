@@ -55,9 +55,40 @@ service_restart() {
 
 service_full_restart() {
     local serviceName=$1
+    echo "$serviceFileName - service full restarting (stop, start, restart, status)..."
+    service_start $serviceName
+    service_stop $serviceName
+    service_restart $serviceName
+    service_status $serviceName
+}
+
+service_disable() {
+    local serviceName=$1
+    local serviceFileName=$serviceName.service
+    echo "$serviceFileName - service disabling..."
+    sudo systemctl disable $serviceFileName
+}
+
+service_remove() {
+    local serviceName=$1
+    local serviceFileName=$serviceName.service
+    local systemPath="/etc/systemd/system/$serviceFileName"
+    echo "$serviceFileName - service removing (disable, stop, remove)..."
+    service_disable $serviceName
+    service_stop $serviceName
+    echo "running - sudo rm -rf $systemPath"
+    sudo rm -rf $systemPath
+}
+
+service_full_restart() {
+    local serviceName=$1
     echo "Service full restarting (stop, start, restart, status)..."
     service_start $serviceName
     service_stop $serviceName
     service_restart $serviceName
     service_status $serviceName
+}
+
+service_status_all() {
+    sudo service --status-all
 }
