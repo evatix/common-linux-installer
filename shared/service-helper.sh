@@ -16,9 +16,9 @@ create_and_run_service() {
     ls -la | grep "$serviceFileName"
     cd $curdir    
     service_chmod $systemPath
+    service_enable $serviceName
     service_start $serviceName
     service_status $serviceName
-    service_enable $serviceName
     service_restart $serviceName
     service_status $serviceName
 }
