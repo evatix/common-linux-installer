@@ -124,7 +124,7 @@ download_install_targz(){
 force_copy(){
     local from=$1
     local to=$2
-    echo "Running : yes | cp -rf $from $to"
+    info "Copying : yes | cp -rf $from $to"
     yes | cp -rf $from $to
 }
 
@@ -139,14 +139,14 @@ move_to_directory_ls_with_grep(){
     local moving=$1
     local grepCommand=$2
     local curdir=$pwd
-    echo "Checking grep - cd [$moving] && ls -la | grep $grepCommand"
-    echo "Local: $curdir"
-    echo "Moving to : $moving"
+    info "Checking grep - cd [$moving] && ls -la | grep $grepCommand"
+    info "Local: $curdir"
+    info "Moving to : $moving"
     cd $moving
     local curdir2=$pwd
-    echo "Running Grep ($curdir2): ls -la | grep $grepCommand"
+    info "Running Grep ($curdir2): ls -la | grep $grepCommand"
     ls -la | grep "$grepCommand"
     cd $curdir
     local curdir3=$pwd
-    echo "Current Directory : $curdir3"
+    info "Current Directory : $curdir3"
 }
