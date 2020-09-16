@@ -131,7 +131,7 @@ force_copy(){
 sudo_force_copy(){
     local from=$1
     local to=$2
-    echo "Running : yes | sudo cp -rf $from $to"
+    info "Copying : yes | sudo cp -rf $from $to"
     yes | sudo cp -rf $from $to
 }
 
@@ -139,7 +139,7 @@ move_to_directory_ls_with_grep(){
     local moving=$1
     local grepCommand=$2
     local curdir=$pwd
-  
+    echo "Checking grep - cd [$moving] && ls -la | grep $grepCommand"
     echo "Local: $curdir"
     echo "Moving to : $moving"
     cd $moving
