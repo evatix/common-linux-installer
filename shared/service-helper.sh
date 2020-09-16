@@ -33,35 +33,35 @@ service_start() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     echo "$serviceFileName - service starting..."
-    sudo systemctl start $serviceFileName
+    systemctl start $serviceFileName
 }
 
 service_stop() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     echo "$serviceFileName - service stopping..."
-    sudo systemctl stop $serviceFileName
+    systemctl stop $serviceFileName
 }
 
 service_status() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     echo "$serviceFileName - service status..."
-    sudo systemctl status $serviceFileName
+    systemctl status $serviceFileName
 }
 
 service_enable() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     echo "$serviceFileName - service enabled..."
-    sudo systemctl enable $serviceFileName
+    systemctl enable $serviceFileName
 }
 
 service_restart() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     echo "$serviceFileName - service restarting..."
-    sudo systemctl restart $serviceFileName
+    systemctl restart $serviceFileName
 }
 
 service_full_restart() {
@@ -77,7 +77,7 @@ service_disable() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     echo "$serviceFileName - service disabling..."
-    sudo systemctl disable $serviceFileName
+    systemctl disable $serviceFileName
 }
 
 service_remove() {
@@ -101,5 +101,5 @@ service_full_restart() {
 }
 
 service_status_all() {
-    sudo service --status-all
+    service --status-all
 }
