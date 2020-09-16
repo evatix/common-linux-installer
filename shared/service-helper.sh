@@ -9,7 +9,7 @@ create_and_run_service() {
     local serviceFileName=$serviceName.service
     local sysDir=/etc/systemd/system
     local sysBinPath=/usr/bin
-    local sysBinServicePath=$sysBinPath/$serviceFileName
+    local sysBinServicePath=$sysBinPath/$batchFilePath
     local systemPath="$sysDir/$serviceFileName"
     # cp akarim-service.service /etc/systemd/system/akarim-service.service
     service_chmod_644 $serviceFilePath
@@ -17,7 +17,7 @@ create_and_run_service() {
     sudo_force_copy $batchFilePath $sysBinServicePath
     service_chmod_plus_x $sysBinPath
     move_to_directory_ls_with_grep $sysBinPath $serviceName
-    move_to_directory_ls_with_grep $sysDir $serviceName
+    move_to_directory_ls_with_grep $sysDir $batchFilePath
     service_chmod_644 $systemPath
     service_start $serviceName
     service_enable $serviceName
