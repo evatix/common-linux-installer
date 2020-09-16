@@ -14,8 +14,8 @@ create_and_run_service() {
     
     move_to_directory_ls_with_grep $sysDir $serviceName
     service_chmod $systemPath
-    service_enable $serviceName
     service_start $serviceName
+    service_enable $serviceName
     service_status $serviceName
 }
 
