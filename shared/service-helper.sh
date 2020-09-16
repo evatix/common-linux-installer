@@ -8,7 +8,6 @@ create_and_run_service() {
     local serviceFileName=$serviceName.service
     local sysDir=/etc/systemd/system
     local systemPath="$sysDir/$serviceFileName"
-    local curdir=$pwd
     # cp akarim-service.service /etc/systemd/system/akarim-service.service
     service_chmod $serviceFilePath
     sudo_force_copy $serviceFilePath $systemPath

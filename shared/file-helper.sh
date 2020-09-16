@@ -138,7 +138,7 @@ sudo_force_copy(){
 move_to_directory_ls_with_grep(){
     local moving=$1
     local grepCommand=$2
-    local curdir=$pwd
+    local curdir=$(pwd)
     info "---- [Start] Appying from($curdir) to($moving) - grep - cd [$moving] && ls -la | grep $grepCommand ----"
     info "Current: $curdir"
     info "Moving to : $moving"
