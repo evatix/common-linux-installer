@@ -21,7 +21,7 @@ create_and_run_service() {
 
 service_chmod() {
     local path=$1
-    info "$path - applying chmod 644 $path ..."
+    warn "$path - applying chmod 644 $path ..."
     sudo chmod 644 $path
 }
 
@@ -29,14 +29,14 @@ service_start() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     info "$serviceFileName - service starting..."
-    systemctl --user start $serviceFileName
+    systemctl start $serviceFileName
 }
 
 service_stop() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
-    info "$serviceFileName - service stopping..."
-    systemctl --user stop $serviceFileName
+    warn "$serviceFileName - service stopping..."
+    systemctl stop $serviceFileName
 }
 
 service_status() {
@@ -49,14 +49,14 @@ service_status() {
 service_enable() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
-    info "$serviceFileName - service enabled..."
+    warn "$serviceFileName - service enabling..."
     systemctl --user enable --now $serviceFileName
 }
 
 service_restart() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
-    info "$serviceFileName - service restarting..."
+    warn "$serviceFileName - service restarting..."
     systemctl --user restart $serviceFileName
 }
 
