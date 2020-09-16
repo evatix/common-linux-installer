@@ -3,7 +3,7 @@ Description=Brew Startup
 
 [Service]
 Type=any
-ExecStart=bash /home/a/git-repos/common-linux-installer/brew-installer/brew.service.sh
+ExecStart=su -a -c bash ~/git-repos/common-linux-installer/brew-installer/brew.service.sh
 
 [Install]
 WantedBy=multi-user.target

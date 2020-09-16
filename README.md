@@ -12,6 +12,7 @@ Common linux installer make file
 - [bash - `Syntax error: "(" unexpected` when creating an array - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/253892/syntax-error-unexpected-when-creating-an-array)
 - [bash - How to document shell function? - Stack Overflow](https://stackoverflow.com/questions/32657065/how-to-document-shell-function)
 - [Docker Install - HackMD](https://hackmd.io/gs29wgjlRpqZU2eWiy0dvQ)
+- [command line - Run a shell script as another user that has no password - Ask Ubuntu](https://askubuntu.com/questions/294736/run-a-shell-script-as-another-user-that-has-no-password)
 
 ## Make Labels
 
@@ -30,3 +31,9 @@ Installs chrome
 ### ins-vscode
 
 Installs vscode
+
+### Codes
+
+```
+sudo -H -u a bash -c 'echo "I am $USER, with uid $UID"' 
+```
