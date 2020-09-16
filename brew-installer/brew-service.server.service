@@ -3,8 +3,8 @@ Description=Brew Startup
 
 [Service]
 Type=akarim
+User=a
 ExecStart=bash ~/git-repos/common-linux-installer/brew-installer/brew.service.sh
 
 [Install]
 WantedBy=multi-user.target
-User=a
