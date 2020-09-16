@@ -144,11 +144,11 @@ move_to_directory_ls_with_grep(){
     info "Current: $curdir"
     info "Moving to : $moving"
     cd $moving
-    local curdir2=$pwd
+    local curdir2=$(pwd)
     info "Running Grep ($curdir2): ls -la | grep $grepCommand"
     ls -la | grep "$grepCommand"
     cd $curdir
-    local curdir3=$pwd
+    local curdir3=$(pwd)
     info "Current Directory : $curdir3"
     info "----- [End] -----"
 }
