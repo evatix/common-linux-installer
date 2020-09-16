@@ -11,6 +11,7 @@ create_and_run_service() {
     echo "Copying cp $serviceFilePath $systemPath ..."
     sudo cp $serviceFilePath $systemPath
     cd $sysDir
+    echo "checking grep - [$sysDir] - ls -la | grep $serviceFileName"
     ls -la | grep "$serviceFileName"
     cd $curdir
     service_chmod $systemPath
