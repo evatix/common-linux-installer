@@ -76,8 +76,6 @@ service_disable() {
     sudo systemctl disable $serviceFileName
 }
 
-
-
 service_remove() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
