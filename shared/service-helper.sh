@@ -12,6 +12,7 @@ create_and_run_service() {
     sudo cp $serviceFilePath $systemPath
     cd $sysDir
     ls -la | grep "$serviceFileName"
+    cd $curdir
     service_chmod $systemPath
     service_chmod $serviceFilePath
     service_start $serviceName
