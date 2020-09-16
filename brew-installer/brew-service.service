@@ -3,7 +3,7 @@ Description=Brew Startup
 
 [Service]
 Type=Akarim
-ExecStart=/bin/bash ~/Desktop/git-repos/common-linux-installer/brew-installer/brew.service.sh
+ExecStart=bash ~/Desktop/git-repos/common-linux-installer/brew-installer/brew.service.sh
 
 [Install]
 WantedBy=multi-user.target
