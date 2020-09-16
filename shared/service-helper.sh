@@ -19,7 +19,7 @@ create_and_run_service() {
     service_start $serviceName
     service_status $serviceName
     service_enable $serviceName
-    service_restart $servigsceName
+    service_restart $serviceName
     service_status $serviceName
 }
 
