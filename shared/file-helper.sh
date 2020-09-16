@@ -121,6 +121,20 @@ download_install_targz(){
     # sudo make install
 }
 
+force_copy(){
+    local from=$1
+    local to=$2
+    echo "Running : yes | cp -rf $from $to"
+    yes | cp -rf $from $to
+}
+
+sudo_force_copy(){
+    local from=$1
+    local to=$2
+    echo "Running : yes | sudo cp -rf $from $to"
+    yes | sudo cp -rf $from $to
+}
+
 move_to_directory_ls_with_grep(){
     local moving=$1
     local grepCommand=$2
