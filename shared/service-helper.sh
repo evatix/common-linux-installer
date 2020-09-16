@@ -6,7 +6,8 @@ create_and_run_service() {
     local serviceFileName=$serviceName.service
     local systemPath="/etc/systemd/system/$serviceFileName"
 
-    sudo cp $serviceFileName $systemPath
+    # cp akarim-service.service /etc/systemd/system/akarim-service.service
+    sudo cp $serviceFilePath $systemPath
     sudo chmod 644 $systemPath
     service_start $serviceName
     service_status $serviceName
