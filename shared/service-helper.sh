@@ -19,8 +19,6 @@ create_and_run_service() {
     service_enable $serviceName
     service_start $serviceName
     service_status $serviceName
-    service_restart $serviceName
-    service_status $serviceName
 }
 
 service_chmod() {
