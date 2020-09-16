@@ -8,14 +8,14 @@ create_and_run_service() {
     local systemPath="$sysDir/$serviceFileName"
     local curdir=$pwd
     # cp akarim-service.service /etc/systemd/system/akarim-service.service
+    service_chmod $serviceFilePath
     echo "Copying cp $serviceFilePath $systemPath ..."
     sudo cp $serviceFilePath $systemPath
     cd $sysDir
     echo "checking grep - [$sysDir] - ls -la | grep $serviceFileName"
     ls -la | grep "$serviceFileName"
-    cd $curdir
+    cd $curdir    
     service_chmod $systemPath
-    service_chmod $serviceFilePath
     service_start $serviceName
     service_status $serviceName
     service_enable $serviceName
