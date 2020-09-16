@@ -57,7 +57,7 @@ service_restart() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     warn "$serviceFileName - service restarting..."
-    systemctl --user restart $serviceFileName
+    systemctl restart $serviceFileName
 }
 
 service_full_restart() {
