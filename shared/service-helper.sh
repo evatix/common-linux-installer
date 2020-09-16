@@ -9,7 +9,7 @@ create_and_run_service() {
     # cp akarim-service.service /etc/systemd/system/akarim-service.service
     echo "Copying cp $serviceFilePath $systemPath ..."
     sudo cp $serviceFilePath $systemPath
-    gsservice_chmod $systemPath
+    service_chmod $systemPath
     service_chmod $serviceFilePath
     service_start $serviceName
     service_status $serviceName
