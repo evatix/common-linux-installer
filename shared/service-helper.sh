@@ -54,7 +54,7 @@ service_enable() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
     echo "$serviceFileName - service enabled..."
-    systemctl enable $serviceFileName
+    systemctl --user enable --now $serviceFileName
 }
 
 service_restart() {
