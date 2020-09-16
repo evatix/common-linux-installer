@@ -5,6 +5,7 @@
 
 service_test(){
     # brew-service.server.service
+    service_remove brew-service.server
     create_and_run_service brew-service.server ../brew-installer/brew-service.server.service
     service_status brew-service.server
     service_status_all
