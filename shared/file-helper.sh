@@ -125,3 +125,15 @@ download_install_targz(){
 download_install_targz "https://www.kernel.org/pub/software/scm/git/git-2.28.0.tar.gz" git.2.28.tar.gz
 # https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace-text-in-files-in-linux-unix-shell/
 
+move_to_directory_ls_with_grep(){
+    local curdir=$pwd
+    local moving=$1
+    local grepCommand=$2
+    echo "Local: $curdir"
+    echo "moving to : $moving"
+    cd $moving
+    echo "Running Grep ($pwd):  ls -la | grep $grepCommand"
+    ls -la | grep "$grepCommand"
+    cd $curdir
+    echo "current to : $pwd"
+}

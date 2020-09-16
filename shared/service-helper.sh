@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. ./file-helper.sh
+
 create_and_run_service() {
     local serviceName=$1
     local serviceFilePath=$2
@@ -11,10 +13,8 @@ create_and_run_service() {
     service_chmod $serviceFilePath
     echo "Copying cp $serviceFilePath $systemPath ..."
     sudo cp $serviceFilePath $systemPath
-    cd $sysDir
     echo "checking grep - [$sysDir] - ls -la | grep $serviceFileName"
-    ls -la | grep "$serviceFileName"
-    cd $curdir    
+    move_to_directory_ls_with_grep $sysDir $serviceName
     service_chmod $systemPath
     service_enable $serviceName
     service_start $serviceName
@@ -78,6 +78,8 @@ service_disable() {
     systemctl disable $serviceFileName
 }
 
+
+
 service_remove() {
     local serviceName=$1
     local serviceFileName=$serviceName.service
@@ -85,8 +87,10 @@ service_remove() {
     echo "$serviceFileName - service removing (disable, stop, remove)..."
     service_disable $serviceName
     service_stop $serviceName
+    move_to_directory_ls_with_grep $systemPath $serviceName
     echo "running - sudo rm -rf $systemPath"
     sudo rm -rf $systemPath
+    move_to_directory_ls_with_grep $sysDir $serviceName
 }
 
 service_full_restart() {
