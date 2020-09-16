@@ -2,7 +2,7 @@
 Description=Brew Startup
 
 [Service]
-Type=any
+Type=simple
 ExecStart=bash -c "sudo -H -u a bash /home/a/git-repos/common-linux-installer/brew-installer/brew.service.sh"
  
 [Install]

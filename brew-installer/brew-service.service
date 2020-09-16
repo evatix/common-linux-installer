@@ -2,7 +2,7 @@
 Description=Brew Startup
 
 [Service]
-Type=Akarim
+Type=simple
 ExecStart=bash ~/Desktop/git-repos/common-linux-installer/brew-installer/brew.service.sh
 
 [Install]
