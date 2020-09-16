@@ -132,5 +132,6 @@ move_to_directory_ls_with_grep(){
     echo "Running Grep ($curdir2): ls -la | grep $grepCommand"
     ls -la | grep "$grepCommand"
     cd $curdir
-    echo "current to : $pwd"
+    local curdir3=$pwd
+    echo "Current Directory : $curdir3"
 }
