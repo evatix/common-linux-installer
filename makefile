@@ -6,6 +6,7 @@ MouseWheel = "./mousewheel/"
 BrewFolder = "./brew-installer/"
 PyPipFolder = "./py-pip-ins/"
 PowerShellFolder = "./psw-ins/"
+DockerFolder = "./docker-install/"
 
 git-clean-get:
 	git reset --hard
@@ -56,7 +57,7 @@ ins-ps:
 	cd $(PowerShellFolder) && sudo sh ./psw-ins.sh
 
 ins-docker:
-	
+	cd $(DockerFolder) && bash ./docker-ins.sh
 
 ins-brew:
 	cd $(BrewFolder) && sh ./brew-ins.sh
