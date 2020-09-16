@@ -146,6 +146,8 @@ move_to_directory_ls_with_grep(){
     cd $moving
     local curdir2=$(pwd)
     info "Running Grep ($curdir2): ls -la | grep $grepCommand"
+    echo 
+    echo 
     ls -la | grep "$grepCommand"
     cd $curdir
     local curdir3=$(pwd)
