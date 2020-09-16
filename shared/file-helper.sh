@@ -140,17 +140,17 @@ move_to_directory_ls_with_grep(){
     local grepCommand=$2
     local curdir=$(pwd)
     info "---- [Start] Appying from($curdir) to($moving) ----"
-    info "Applying cd [$moving] && ls -la | grep $grepCommand"
-    info "Current: $curdir"
-    info "Moving to : $moving"
+    # info "Applying cd [$moving] && ls -la | grep $grepCommand"
+    # info "Current: $curdir"
+    # info "Moving to : $moving"
     cd $moving
     local curdir2=$(pwd)
     info "Running Grep ($curdir2): ls -la | grep $grepCommand"
     echo 
-    echo 
     ls -la | grep "$grepCommand"
+    echo 
     cd $curdir
     local curdir3=$(pwd)
-    info "Current Directory : $curdir3"
+    # info "Current Directory : $curdir3"
     info "----- [End] -----"
 }
