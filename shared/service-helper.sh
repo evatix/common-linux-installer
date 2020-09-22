@@ -17,7 +17,7 @@ create_and_run_service() {
     sudo_force_copy $batchFilePath $sysBinServicePath
     service_chmod_plus_x $sysBinPath
     move_to_directory_ls_with_grep $sysBinPath $serviceName
-    # move_to_directory_ls_with_grep $sysDir $batchFilePath # Fix here
+    move_to_directory_ls_with_grep $sysDir $batchFilePath # Fix here
     service_chmod_644 $systemPath
     service_start $serviceName
     service_enable $serviceName

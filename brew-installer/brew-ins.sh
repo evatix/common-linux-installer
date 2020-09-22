@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Include files.
-. ./../service-helper.sh
+. ../shared/brew-service-helper.sh
 
 echo "make ins-devenv, if already not."
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -24,4 +24,7 @@ create_and_run_service cp brew-service ./brew-service.service
 
 brew --version
 brew install hello
+info "creating brew os startup service"
+create_brew_service
+
 echo "do sudo reboot"

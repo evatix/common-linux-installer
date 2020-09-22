@@ -1,18 +1,11 @@
 #!/bin/bash
 
 # Include files.
-. ./service-helper.sh
+. ./brew-service-helper.sh
+. ./file-helper.sh
 
 service_test(){
-    # brew-service.server.service
-    service_remove brew-service.server
-    create_and_run_service brew-service.server ../brew-installer/brew-service.server.service ../brew-installer/brew.service.sh
-    service_status brew-service.server
-    service_status_all
-    # service_remove brew-service.server
-    # service_status_all
-
-    # sudo cp brew-service.service /etc/systemd/system/brew-service.service
+    create_brew_service 
 }
 
 file_helper_test(){
