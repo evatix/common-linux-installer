@@ -60,7 +60,7 @@ ins-docker:
 	cd $(DockerFolder) && bash ./docker-ins.sh
 
 ins-brew:
-	cd $(BrewFolder) && sh ./brew-ins.sh
+	cd $(BrewFolder) && bash ./brew-ins.sh
 	echo "https://formulae.brew.sh/formula-linux/"
 	brew --version
 

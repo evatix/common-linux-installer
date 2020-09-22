@@ -3,7 +3,7 @@
 # Include files.
 . ../shared/brew-service-helper.sh
 
-echo "make ins-devenv, if already not."
+echo "make ins-devenv, if not already."
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 bash ./brew-eval.sh
