@@ -65,7 +65,7 @@ ins-brew:
 	brew --version
 
 fix-brew:
-	cd $(BrewFolder) && ./brew-eval.sh
+	cd $(BrewFolder) && bash ./brew-eval.sh
 	brew --version
 
 ins-git:
