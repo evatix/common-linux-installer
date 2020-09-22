@@ -54,7 +54,7 @@ ins-clask-vlc:
 	brew clask install vlc
 
 ins-ps:
-	cd $(PowerShellFolder) && sudo sh ./psw-ins.sh
+	cd $(PowerShellFolder) && sudo bash ./psw-ins.sh
 
 ins-docker:
 	cd $(DockerFolder) && bash ./docker-ins.sh
