@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ../service-helper.sh
+. ./service-helper.sh
 
 create_brew_service(){
      # brew-service.server.service
