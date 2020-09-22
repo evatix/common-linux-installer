@@ -27,6 +27,10 @@ ins-golang:
 
 ins-golang-snap:
 	sudo snap install go
+	echo "https://stackoverflow.com/a/57434744"
+	echo "sudo vim /etc/environment"
+	echo "append :/snap/bin"
+	echo "sudo reboot"
 
 ins-clask-vlc:
 	cd .. && make ins-clask-vlc

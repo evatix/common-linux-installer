@@ -13,6 +13,7 @@ Common linux installer make file
 - [bash - How to document shell function? - Stack Overflow](https://stackoverflow.com/questions/32657065/how-to-document-shell-function)
 - [Docker Install - HackMD](https://hackmd.io/gs29wgjlRpqZU2eWiy0dvQ)
 - [command line - Run a shell script as another user that has no password - Ask Ubuntu](https://askubuntu.com/questions/294736/run-a-shell-script-as-another-user-that-has-no-password)
+- [Fix snap bin](https://stackoverflow.com/a/57434744)
 
 ## Make Labels
 
