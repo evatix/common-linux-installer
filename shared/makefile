@@ -25,6 +25,9 @@ fix-pip:
 ins-golang:
 	cd .. && make ins-golang
 
+ins-golang-snap:
+	sudo snap install go
+
 ins-clask-vlc:
 	cd .. && make ins-clask-vlc
 
