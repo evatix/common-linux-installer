@@ -3,7 +3,7 @@ Description=Brew Startup
 
 [Service]
 Type=simple
-ExecStart=bash -c "sudo -H -u a bash /usr/bin/brew.service.sh"
+ExecStart=bash -c "sudo -H -u a bash brew.service.sh"
  
 [Install]
 WantedBy=multi-user.target
