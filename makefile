@@ -84,6 +84,14 @@ ins-wget:
 ins-curl:
 	yes | sudo apt install curl
 
+edit-omzsh-source:
+	vim ~/.zshrc
+	source ~/.zshrc
+
+sudo-edit-omzsh-source:
+	sudo vim ~/.zshrc
+	source ~/.zshrc
+
 ins-vscode:
 	sudo sh $(VsCodeShell)
 
