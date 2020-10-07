@@ -36,6 +36,9 @@ ins-devenv-ubuntu:
 	yes | sudo apt-get install autoremove python-dev python2 imwheel
 	make update
 
+ins-snapd:
+	sudo apt install snapd
+
 ins-scoop:
 	make ins-devenv
 	pip install scoop
@@ -48,6 +51,9 @@ ins-golang:
 	brew install go
 	make update
 	go version
+
+ins-golang-snap:
+	sudo snap install go --classic
 
 ins-clask-vlc:
 	echo "brew clask install vlc"
