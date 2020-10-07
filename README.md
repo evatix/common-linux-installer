@@ -14,6 +14,8 @@ Common linux installer make file
 - [Docker Install - HackMD](https://hackmd.io/gs29wgjlRpqZU2eWiy0dvQ)
 - [command line - Run a shell script as another user that has no password - Ask Ubuntu](https://askubuntu.com/questions/294736/run-a-shell-script-as-another-user-that-has-no-password)
 - [Fix snap bin](https://stackoverflow.com/a/57434744)
+- [How to Enable SSH on Ubuntu 18.04 | Linuxize](https://linuxize.com/post/how-to-enable-ssh-on-ubuntu-18-04/)
+- [How to Enable SSH on Ubuntu 20.04 | Linuxize](https://linuxize.com/post/how-to-enable-ssh-on-ubuntu-20-04/)
 
 ## Make Labels
 

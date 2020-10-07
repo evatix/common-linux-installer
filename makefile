@@ -85,8 +85,10 @@ ins-chrome:
 	yes | sudo sh $(ChromeShell)
 
 install-ssh-pass-linux:
-	sudo apt-get install sshpass
-	sudo apt update
+	yes | sudo apt install openssh-server
+	yes | sudo apt-get install sshpass	
+	yes | sudo apt update
+	ip address
 
 ins-li-fonts:
 	yes | sudo apt-get install fonts-powerline
