@@ -128,3 +128,12 @@ vm-mount-script-copy:
 
 vm-mount-shared:
 	cd $(VmwareFolder) && make mount-shared
+
+cat-ssh:
+	cat ~/.ssh/id_rsa.pub
+
+ssh-sample:
+	echo "ssh-keygen -t rsa -b 4096 -C 'Your email'"
+	
+modify-authorized-keys:
+	sudo vim ~/.ssh/authorized_keys
