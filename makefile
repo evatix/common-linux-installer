@@ -87,7 +87,15 @@ ins-chrome:
 install-ssh-pass-linux:
 	yes | sudo apt install openssh-server
 	yes | sudo apt-get install sshpass	
-	yes | sudo apt update
+	yes | ssudo apt update
+	sudo systemctl status ssh
+	sudo ufw allow ssh	
+
+ssh-port:
+	echo "https://bit.ly/3lpPAId"
+	sudo grep Port /etc/ssh/sshd_config 
+	sudo netstat -lntp
+	sudo lsof -Pi | grep ssh
 	ip address
 
 ins-li-fonts:
