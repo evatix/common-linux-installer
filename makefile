@@ -26,8 +26,8 @@ fix-mwheel:
 	cd $(MouseWheel) && sudo sh ./fix.sh
 
 ins-devenv:
-	echo "Installing apt-get install build-essential wget curl file git ssh libssl-dev vim"
-	yes | sudo apt-get install build-essential wget curl file git ssh libssl-dev vim
+	echo "Installing apt-get install vim build-essential wget curl file git ssh libssl-dev vim"
+	yes | sudo apt-get install vim build-essential wget curl file git ssh libssl-dev vim
 	make update
 
 ins-devenv-ubuntu:
