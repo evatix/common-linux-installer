@@ -87,6 +87,7 @@ ins-curl:
 
 edit-omzsh-source:
 	vim ~/.zshrc
+	echo ""
 	source ~/.zshrc
 
 sudo-edit-omzsh-source:
