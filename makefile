@@ -90,6 +90,7 @@ edit-omzsh-source:
 
 sudo-edit-omzsh-source:
 	sudo vim ~/.zshrc
+	echo ""
 	source ~/.zshrc
 
 ins-vscode:
@@ -126,9 +127,11 @@ ins-li-build:
 
 ins-li-ozsh:
 	yes | wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+	yes | git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 ins-cent-ozsh:
 	yes | wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+	yes | git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 ins-li-ch-zsh:
 	chsh -s $(which zsh) -root
