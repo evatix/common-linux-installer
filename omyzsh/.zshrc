@@ -10,6 +10,12 @@ export ZSH="/home/mobaxterm/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
+# ZSH_THEME="agnoster"
+# ZSH_THEME="amuse"
+# ZSH_THEME="avit"
+# ZSH_THEME="bureau"
+# ZSH_THEME="kardan"
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
