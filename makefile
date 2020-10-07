@@ -54,6 +54,7 @@ ins-golang:
 
 ins-golang-snap:
 	sudo snap install go --classic
+	go version
 
 ins-clask-vlc:
 	echo "brew clask install vlc"
