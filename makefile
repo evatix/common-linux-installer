@@ -66,6 +66,10 @@ ins-ps:
 ins-docker:
 	cd $(DockerFolder) && bash ./docker-ins.sh
 
+ins-docker-new:
+	echo "https://hackmd.io/@akarimevatix/HJ4jmnjVv"
+	sudo apt-get install docker-ce
+
 ins-brew:
 	cd $(BrewFolder) && bash ./brew-ins.sh
 	echo "https://formulae.brew.sh/formula-linux/"
