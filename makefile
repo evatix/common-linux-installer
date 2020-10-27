@@ -71,7 +71,13 @@ ins-brew:
 	echo "https://formulae.brew.sh/formula-linux/"
 	brew --version
 
+cat-brew-fix:
+	clear
+	cd $(BrewFolder) && cat ./brew-eval.sh
+	read -p "Press enter to continue"
+
 fix-brew:
+	make cat-brew-fix
 	cd $(BrewFolder) && bash ./brew-eval.sh
 	brew --version
 
