@@ -81,6 +81,9 @@ alias brew_fix='eval $(~/.linuxbrew/bin/brew shellenv) && test -d ~/.linuxbrew &
 alias vmshared='/usr/bin/vmhgfs-fuse --enabled && sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other'
 alias editzsh='echo "editzsh => vim ~/.zshrc" && vim ~/.zshrc'
 alias applyedit='echo "applyedit => source ~/.zshrc" && source ~/.zshrc'
+alias authedit='echo "sudo vim ~/.ssh/authorized_keys" && sudo vim ~/.ssh/authorized_keys'
+alias catssh='echo "cat ~/.ssh/id_rsa.pub" && sudo cat ~/.ssh/id_rsa.pub'
+alias genssh='echo "ssh-keygen -t rsa -b 4096 -C 'Your email'"'
 
 # User configuration
 
