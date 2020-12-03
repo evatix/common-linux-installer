@@ -78,6 +78,7 @@ plugins=(git zsh-autosuggestions nvm)
 
 alias clear_history='echo "" > ~/.zsh_history & exec $SHELL -l'
 alias brew_fix='eval $(~/.linuxbrew/bin/brew shellenv) && test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv) && test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv) && test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile && source $ZSH/oh-my-zsh.sh'
+alias vmshared='/usr/bin/vmhgfs-fuse --enabled && sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other'
 
 # User configuration
 
