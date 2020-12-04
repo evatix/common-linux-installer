@@ -15,6 +15,15 @@ ZSH_THEME="robbyrussell"
 # ZSH_THEME="avit"
 # ZSH_THEME="bureau"
 # ZSH_THEME="kardan"
+# ZSH_THEME="fino-time"
+# ZSH_THEME="josh"
+# ZSH_THEME="jtriley"
+# ZSH_THEME="peepcode"
+# ZSH_THEME="rkj-repos"
+# ZSH_THEME="simonoff"
+# ZSH_THEME="smt"
+# ZSH_THEME="Soliah"
+# ZSH_THEME="steeef"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -82,6 +91,7 @@ alias brew_fix='eval $(~/.linuxbrew/bin/brew shellenv) && test -d ~/.linuxbrew &
 alias vmshared='/usr/bin/vmhgfs-fuse --enabled && sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other'
 alias editzsh='echo "editzsh => vim ~/.zshrc" && vim ~/.zshrc'
 alias applyedit='echo "applyedit => source ~/.zshrc" && source ~/.zshrc'
+alias editapplyzsh='echo "editapplyzsh => editzsh && echo "" && applyedit" && editzsh && echo "" && applyedit'
 alias authedit='echo "sudo vim ~/.ssh/authorized_keys" && sudo vim ~/.ssh/authorized_keys'
 alias catssh='echo "cat ~/.ssh/id_rsa.pub" && sudo cat ~/.ssh/id_rsa.pub'
 alias genssh='echo "ssh-keygen -t rsa -b 4096 -C 'Your email'"'
@@ -93,6 +103,9 @@ alias ngnrt='echo "ngnrt => sudo systemctl reload nginx" && sudo systemctl reloa
 alias ngnenb='echo "ngnenb => sudo systemctl enable nginx" && sudo systemctl enable nginx'
 alias ngndis='echo "ngndis => sudo systemctl disable nginx" && sudo systemctl disable nginx'
 alias vmedit='echo "vmedit => vim ~/.vimrc && to add line numer add set number (https://bit.ly/3mHpBNt)" && vim ~/.vimrc'
+alias vimline='echo "vimline => echo https://stackoverflow.com/a/42619212" && rm -rf ~/.vimrc && echo "set number" >> ~/.vimrc && echo "syntax on" >> ~/.vimrc'
+
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 

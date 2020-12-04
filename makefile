@@ -166,3 +166,9 @@ ssh-sample:
 	
 modify-authorized-keys:
 	sudo vim ~/.ssh/authorized_keys
+
+vimsetline:
+	echo "https://stackoverflow.com/a/42619212"
+	rm -rf ~/.vimrc
+	echo "set number" >> ~/.vimrc
+	echo "syntax on" >> ~/.vimrc
