@@ -85,6 +85,14 @@ alias applyedit='echo "applyedit => source ~/.zshrc" && source ~/.zshrc'
 alias authedit='echo "sudo vim ~/.ssh/authorized_keys" && sudo vim ~/.ssh/authorized_keys'
 alias catssh='echo "cat ~/.ssh/id_rsa.pub" && sudo cat ~/.ssh/id_rsa.pub'
 alias genssh='echo "ssh-keygen -t rsa -b 4096 -C 'Your email'"'
+alias rsnet='echo "rsnet => systemctl restart NetworkManager.service (https://bit.ly/3g80uAR)" && systemctl restart NetworkManager.service'
+alias ngnsu='echo "ngnsu => sudo systemctl status nginx (https://bit.ly/2I8MRVo)" && sudo systemctl status nginx'
+alias ngnsp='echo "ngnsp => sudo systemctl stop nginx" && sudo systemctl stop nginx'
+alias ngnst='echo "ngnst => sudo systemctl start nginx" && sudo systemctl start nginx'
+alias ngnrt='echo "ngnrt => sudo systemctl reload nginx" && sudo systemctl reload nginx'
+alias ngnenb='echo "ngnenb => sudo systemctl enable nginx" && sudo systemctl enable nginx'
+alias ngndis='echo "ngndis => sudo systemctl disable nginx" && sudo systemctl disable nginx'
+alias vmedit='echo "vmedit => vim ~/.vimrc && to add line numer add set number (https://bit.ly/3mHpBNt)" && vim ~/.vimrc'
 
 # User configuration
 
@@ -111,4 +119,5 @@ alias genssh='echo "ssh-keygen -t rsa -b 4096 -C 'Your email'"'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 
