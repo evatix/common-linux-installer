@@ -64,10 +64,15 @@ ins-ps:
 	cd $(PowerShellFolder) && sudo bash ./psw-ins.sh
 
 ins-docker:
+	echo "https://hackmd.io/@akarimevatix/HJ4jmnjVv"
+	echo "https://gitlab.com/evatix-go/os-manuals/-/issues/2"
+	echo "Docker can also be installed using snapd"
 	cd $(DockerFolder) && bash ./docker-ins.sh
 
 ins-docker-new:
 	echo "https://hackmd.io/@akarimevatix/HJ4jmnjVv"
+	echo "https://gitlab.com/evatix-go/os-manuals/-/issues/2"
+	echo "Docker can also be installed using snapd"
 	sudo apt-get install docker-ce
 
 ins-brew:
