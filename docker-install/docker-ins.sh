@@ -3,7 +3,8 @@
 sudo apt-get update
 mkdir -p ~/scripts
 cd ~/scripts
-sudo curl -fsSL https://get.docker.com -o get-docker.sh | sh
+sudo curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
 sudo apt-get update
 docker --version
 sudo groupadd docker
