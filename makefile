@@ -51,6 +51,11 @@ ins-golang:
 	brew install go
 	make update
 	go version
+	
+ins-zsh:
+	# https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
+	yes | sudo apt install zsh
+	zsh --version	
 
 ins-golang-snap:
 	sudo snap install go --classic
