@@ -144,14 +144,13 @@ install-ssh-pass-linux:
 	sudo ufw allow ssh	
 
 install-centos-ssh:
+	echo "https://linuxconfig.org/redhat-8-enable-ssh-service | https://linuxhint.com/enable_ssh_centos8/"
 	sudo su-
-	yes | yum install openssh-server sshpass
+	yes | yum install openssh-server sshpass net-tools
 	ufw allow ssh
-
-install-centos-ssh:
-	sudo su-
-	yes | yum install openssh-server sshpass
-	ufw allow ssh
+	systemctl start sshd
+	firewall-cmd --zone=public --permanent --add-service=ssh
+	netstat -tpln | egrep '(Proto|ssh)'
 
 ssh-port:
 	echo "https://bit.ly/3lpPAId"
@@ -159,6 +158,7 @@ ssh-port:
 	sudo netstat -lntp
 	sudo lsof -Pi | grep ssh
 	ip address
+	sudo netstat -tpln | egrep '(Proto|ssh)'
 
 ins-li-fonts:
 	yes | sudo apt-get install fonts-powerline
