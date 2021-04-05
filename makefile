@@ -148,9 +148,11 @@ install-centos-ssh:
 	sudo su-
 	yes | yum install openssh-server sshpass net-tools
 	ufw allow ssh
-	systemctl start sshd
+	systemctl enable sshd
+	systemctl restart sshd
 	firewall-cmd --zone=public --permanent --add-service=ssh
 	netstat -tpln | egrep '(Proto|ssh)'
+	systemctl status sshd
 
 ssh-port:
 	echo "https://bit.ly/3lpPAId"
