@@ -105,6 +105,8 @@ alias ngndis='echo "ngndis => sudo systemctl disable nginx" && sudo systemctl di
 alias vmedit='echo "vmedit => vim ~/.vimrc && to add line numer add set number (https://bit.ly/3mHpBNt)" && vim ~/.vimrc'
 alias vimline='echo "vimline => echo https://stackoverflow.com/a/42619212" && rm -rf ~/.vimrc && echo "set number" >> ~/.vimrc && echo "syntax on" >> ~/.vimrc'
 
+export PATH=$PATH:/usr/local/go/bin
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
