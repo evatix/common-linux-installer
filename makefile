@@ -142,7 +142,12 @@ install-ssh-pass-linux:
 	yes | ssudo apt update
 	sudo systemctl status ssh
 	sudo ufw allow ssh	
-	
+
+install-centos-ssh:
+	sudo su-
+	yes | yum install openssh-server sshpass
+	ufw allow ssh
+
 install-centos-ssh:
 	sudo su-
 	yes | yum install openssh-server sshpass
