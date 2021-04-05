@@ -1,5 +1,5 @@
 echo "https://bit.ly/2YZXmzy"
-echo "https://bit.ly/2Z1TGgG"
+echo "https://t.ly/FdUJ"
 
 wget http://mirrors.edge.kernel.org/ubuntu/pool/main/i/icu/libicu60_60.2-3ubuntu3_amd64.deb
 wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5.3_amd64.deb
