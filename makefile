@@ -27,7 +27,11 @@ fix-mwheel:
 
 ins-devenv:
 	echo "Installing apt-get install vim build-essential wget curl file git ssh libssl-dev vim"
-	yes | sudo apt-get install vim build-essential wget curl file git ssh libssl-dev vim
+	yes | sudo apt-get install vim build-essential wget curl file git ssh libssl-dev
+	make update
+
+ins-centos-devenv:	
+	yes | sudo yum install vim build-essential wget curl file git ssh libssl-dev
 	make update
 
 ins-devenv-entend:
@@ -43,10 +47,16 @@ ins-devenv-ubuntu:
 
 ins-snapd:
 	sudo apt install snapd
+	
+ins-snapd:
+	sudo apt install snapd
 
-ins-scoop:
-	make ins-devenv
-	pip install scoop
+ins-centos-snapd:
+	# https://snapcraft.io/docs/installing-snap-on-centos
+	yes | sudo yum install epel-release
+	sudo yum install snapd
+	sudo systemctl enable --now snapd.socket
+	sudo ln -s /var/lib/snapd/snap /snap
 
 fix-pip:
 	cd $(PyPipFolder) && sh pip-install.sh
