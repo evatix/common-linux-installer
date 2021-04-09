@@ -24,7 +24,8 @@ cd downloads
 wget https://github.com/git/git/archive/refs/tags/v2.31.1.tar.gz
 tar xf v2.31.1.tar.gz
 cd v2.31.1
-make ./Configure
+make configure
+./configure --prefix=/usr/local
 make all
 make install
 cd ..
