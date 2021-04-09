@@ -31,7 +31,8 @@ ins-devenv:
 	make update
 
 ins-centos-devenv:	
-	yes | sudo yum install vim build-essential wget curl file git ssh libssl-dev
+        # libcurl-devel for git
+	sudo yum install -y vim build-essential wget curl file git ssh libssl-dev libcurl-devel
 	make update
 
 ins-devenv-entend:
