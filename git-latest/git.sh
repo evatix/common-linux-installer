@@ -16,8 +16,8 @@ git version
 
 ## centos https://gist.github.com/egorsmkv/30faa3e61c185a41e89cf849737d4d4b
 sudo su
-yum groupinstall 'Development Tools'
-yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-CPAN perl-devel
+yum groupinstall -y 'Development Tools'
+yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-CPAN perl-devel
 
 mkdir -p downloads
 cd downloads
