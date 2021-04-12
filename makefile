@@ -181,12 +181,15 @@ ssh-fix:
 	iptables-save | sudo tee /etc/iptables/rules.v4
 	
 iptable-persistent:
+	echo "https://gitlab.com/evatix-go/os-manuals/-/issues/14"
 	sudo su
 	apt update
 	apt install iptables-persistent
 	iptables -L -v //check the rules persisted
 	# after reboot 
 	iptables -L -v 
+	systemctl enable iptables
+	systemctl restart iptables
 	# iptables-save save rules using that direct command
 
 ins-li-fonts:
