@@ -175,9 +175,19 @@ ssh-port:
 	sudo netstat -tpln | egrep '(Proto|ssh)'
 
 ssh-fix:
+	sudo su
 	echo "https://askubuntu.com/a/438941 | https://gitlab.com/evatix-go/os-manuals/-/issues/23"
-	sudo iptables -A INPUT -p tcp --dport ssh -j ACCEPT
-	sudo iptables-save | sudo tee /etc/iptables/rules.v4
+	iptables -A INPUT -p tcp --dport ssh -j ACCEPT
+	iptables-save | sudo tee /etc/iptables/rules.v4
+	
+iptable-persistent:
+	sudo su
+	apt update
+	apt install iptables-persistent
+	iptables -L -v //check the rules persisted
+	# after reboot 
+	iptables -L -v 
+	# iptables-save save rules using that direct command
 
 ins-li-fonts:
 	yes | sudo apt-get install fonts-powerline
