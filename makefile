@@ -175,8 +175,9 @@ ssh-port:
 	sudo netstat -tpln | egrep '(Proto|ssh)'
 
 ssh-fix:
-	echo "https://askubuntu.com/a/438941"
+	echo "https://askubuntu.com/a/438941 | https://gitlab.com/evatix-go/os-manuals/-/issues/23"
 	sudo iptables -A INPUT -p tcp --dport ssh -j ACCEPT
+	sudo iptables-save | sudo tee /etc/iptables/rules.v4
 
 ins-li-fonts:
 	yes | sudo apt-get install fonts-powerline
