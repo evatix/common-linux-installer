@@ -174,6 +174,10 @@ ssh-port:
 	ip address
 	sudo netstat -tpln | egrep '(Proto|ssh)'
 
+ssh-fix:
+	echo "https://askubuntu.com/a/438941"
+	sudo iptables -A INPUT -p tcp --dport ssh -j ACCEPT
+
 ins-li-fonts:
 	yes | sudo apt-get install fonts-powerline
 
