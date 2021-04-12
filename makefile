@@ -178,7 +178,7 @@ ssh-fix:
 	sudo su
 	echo "https://askubuntu.com/a/438941 | https://gitlab.com/evatix-go/os-manuals/-/issues/23"
 	iptables -A INPUT -p tcp --dport ssh -j ACCEPT
-	iptables-save | sudo tee /etc/iptables/rules.v4
+	iptables-save
 	
 iptable-persistent:
 	echo "https://gitlab.com/evatix-go/os-manuals/-/issues/14"
