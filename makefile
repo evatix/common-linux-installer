@@ -177,8 +177,23 @@ ssh-port:
 ssh-fix:
 	sudo su
 	echo "https://askubuntu.com/a/438941 | https://gitlab.com/evatix-go/os-manuals/-/issues/23"
+	yes | apt update
+	yes | apt install openssh-server openssh-client sshpass iptables-persistent
+	iptables -L -v
+	systemctl enable iptables
+	systemctl restart iptables
+	systemctl restart sshd
+	systemctl status sshd
 	iptables -A INPUT -p tcp --dport ssh -j ACCEPT
 	iptables-save
+	ps aux | grep sshd
+	firewall-cmd --zone=public --permanent --add-service=ssh
+	netstat -tpln | egrep '(Proto|ssh)'
+	lsof -Pi | grep ssh
+	ip address
+	netstat -tpln | egrep '(Proto|ssh)'
+	ufw allow ssh	
+	systemctl status sshd
 	
 iptable-persistent:
 	echo "https://gitlab.com/evatix-go/os-manuals/-/issues/14"
