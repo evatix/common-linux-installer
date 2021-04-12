@@ -144,11 +144,16 @@ ins-chrome:
 	yes | sudo sh $(ChromeShell)
 
 install-ssh-pass-linux:
-	yes | sudo apt install openssh-server
-	yes | sudo apt-get install sshpass	
-	yes | ssudo apt update
-	sudo systemctl status ssh
+	sudo su
+	apt update	
+	yes | apt install openssh-server openssh-client sshpass	
+	yes | apt update
+	systemctl enable sshd
+	systemctl status ssh
+	systemctl restart sshd
+	systemctl status sshd
 	sudo ufw allow ssh	
+	systemctl status sshd
 
 install-centos-ssh:
 	echo "https://linuxconfig.org/redhat-8-enable-ssh-service | https://linuxhint.com/enable_ssh_centos8/"
