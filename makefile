@@ -31,16 +31,14 @@ ins-devenv:
 	make update
 
 ins-centos-devenv:	
-        # libcurl-devel for git
-	sudo su
-	yum update
-	dnf update
-	yum groupinstall -y 'Development Tools'
-	yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-CPAN perl-devel
-	yum install -y vim build-essential wget curl file git ssh libssl-dev libcurl-devel pcre pcre-devel zlib zlib-devel openssl openssl-devel
-	yum update
-	dnf update	
-
+        sudo su
+	yum update -y && \
+	dnf update -y && \
+	yum groupinstall -y 'Development Tools' && \
+	yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-CPAN perl-devel && \
+	yum install -y vim zsh yum-utils wget curl file git libcurl-devel pcre pcre-devel zlib zlib-devel openssl openssl-devel && \
+	yum update -y 
+	
 ins-devenv-entend:
 	echo "Installing sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools"
 	yes | sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev dirmngr gnupg apt-transport-https ca-certificates redis-server redis-tools
