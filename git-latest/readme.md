@@ -47,7 +47,7 @@ cd ..
 pwd
 ```
 
-## Ubuntu Git Install: Way 2 (by downloading zip)
+## Ubuntu Git Install: Way 2 (by PPA repos)
 
 ```shell
 add-apt-repository ppa:git-core/ppa
