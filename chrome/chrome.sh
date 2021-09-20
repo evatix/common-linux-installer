@@ -1,16 +1,5 @@
-sudo apt update 
-FILE=./google-chrome-stable_current_amd64.deb 
-ParentDirectory= /home/$USER/Downloads/chrome
-mkdir ParentDirectory
-Path = "$ParentDirectory/$FILE"
-if test -f "$Path"; then 
-    echo "$Path already present." 
-    ls | grep "chrome" 
-else 
-    echo "$Path doesn't exist so downloading." 
-    # https://stackoverflow.com/questions/1078524/how-to-specify-the-location-with-wget
-    wget -p "/home/$USER/Downloads/chrome" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-fi 
-
-yes | sudo apt --fix-broken install $Path
-sudo apt update 
+sudo su
+sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
+apt -y update && \
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - && \
+apt install -y google-chrome-stable
